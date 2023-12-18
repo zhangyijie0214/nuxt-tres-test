@@ -21,13 +21,6 @@
 </template>
   
 <script>
-onBeforeMount
-
-onUnmounted
-
-onBeforeUnmount(() => {
-    
-}),
 </script>
 <style>
 button {
