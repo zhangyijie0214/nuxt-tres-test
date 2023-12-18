@@ -1,0 +1,119 @@
+@use 'sass:math';
+
+@function pc-get-vw($target) {
+  $vw-context: (1920 * 0.01) * 1px;
+  @return math.div($target, $vw-context) * 1vw;
+}
+
+@function desktop-wide-vw($target) {
+  $vw-context: (1440 * 0.01) * 1px;
+  @return math.div($target, $vw-context) * 1vw;
+}
+
+@function mobile-get-vw($target) {
+  $vw-context: (767 * 0.01) * 1px;
+  @return math.div($target, $vw-context) * 1vw;
+}
+
+// 定义混合器 mq 适配不同的分辨率
+@mixin mq($point) {
+  @if $point == desktop-super {
+    @media only screen and (min-width: 2560px) {
+      @content;
+    }
+  } @else if $point == desktop-huge {
+    @media only screen and (min-width: 2000px) {
+      @content;
+    }
+  } @else if $point == desktop-large {
+    @media only screen and (max-width: 1920px) {
+      @content;
+    }
+  } @else if $point == desktop-wider {
+    @media only screen and (max-width: 1680px) {
+      @content;
+    }
+  } @else if $point == desktop-wide {
+    @media only screen and (max-width: 1440px) {
+      @content;
+    }
+  } @else if $point == desktop-big {
+    @media only screen and (max-width: 1366px) {
+      @content;
+    }
+  } @else if $point == desktop {
+    @media only screen and (max-width: 1280px) {
+      @content;
+    }
+  } @else if $point == tablet-large {
+    @media only screen and (max-width: 1112px) {
+      @content;
+    }
+  } @else if $point == tablet-wider {
+    @media only screen and (max-width: 1024px) {
+      @content;
+    }
+  } @else if $point == tablet-wide {
+    @media only screen and (max-width: 960px) {
+      @content;
+    }
+  } @else if $point == tablet-big {
+    @media only screen and (max-width: 834px) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media only screen and (max-width: 768px) {
+      @content;
+    }
+  } @else if $point == tablet-small {
+    @media only screen and (max-width: 640px) {
+      @content;
+    }
+  } @else if $point == phone-wider {
+    @media only screen and (max-width: 560px) {
+      @content;
+    }
+  } @else if $point == phone-wide {
+    @media only screen and (max-width: 480px) {
+      @content;
+    }
+  } @else if $point == phone {
+    @media only screen and (max-width: 400px) {
+      @content;
+    }
+  } @else if $point == phone-small {
+    @media only screen and (max-width: 320px) {
+      @content;
+    }
+  } @else if $point == tablet-to-wider {
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+      @content;
+    }
+  } @else if $point == tablet-to-wide {
+    @media only screen and (min-width: 768px) and (max-width: 960px) {
+      @content;
+    }
+  }
+}
+
+// 省略号
+@mixin ellipsis($line) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+}
+
+// 动画
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}

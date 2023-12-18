@@ -1,0 +1,23 @@
+.container-sm {
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  position: relative;
+}
+
+.container-md {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  position: relative;
+}
+
+@include mq(tablet) {
+  .container-sm {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .container-md {
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+  }
+}

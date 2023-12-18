@@ -1,0 +1,65 @@
+@font-face {
+  font-family: 'AlimamaShuHeiTi';
+  src:
+    url('/fonts/AlimamaShuHeiTi/Bold.ttf') format('truetype'),
+    url('/fonts/AlimamaShuHeiTi/Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'OPPOSans';
+  src: url('/fonts/OPPOSans/OPPOSans-M.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'OPPOSans-R';
+  src: url('/fonts/OPPOSans/OPPOSans-R.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'OPPOSans-B';
+  src: url('/fonts/OPPOSans/OPPOSans-B.ttf') format('truetype');
+}
+
+// 大号字体
+.section-title {
+  &.xl {
+    font-size: 0.8rem;
+  }
+
+  &.l {
+    font-size: 0.66rem;
+  }
+
+  font-size: 0.6rem;
+
+  &.m {
+    font-size: 0.46rem;
+  }
+
+  &.s {
+    font-size: 0.4rem;
+  }
+
+  @include mq(tablet) {
+    &.m {
+      font-size: 0.36rem;
+    }
+  }
+}
+
+.sub-title {
+  font-size: 0.32rem;
+
+  &.m {
+    font-size: 0.24rem;
+  }
+}
+
+// 圆角
+.round-default {
+  border-radius: 0.4rem;
+}
+
+p + p {
+  margin-top: 15px;
+}

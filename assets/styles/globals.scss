@@ -1,0 +1,277 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: AlimamaShuHeiTi, Helvetica Neue, sans-serif;
+  font-weight: 400;
+  color: #181b29;
+  overflow-x: hidden;
+  font-size: 16px;
+  line-height: 1.625;
+}
+
+html {
+  font-size: 5.208334vw
+    /* 100*100/1920 */
+  ;
+}
+
+body.dark {
+  background: #000;
+}
+
+@media only screen and (max-width: 1440px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 13.333333vw
+      /* 100*100/750 */
+    ;
+  }
+
+  body {
+    font-size: 0.26rem;
+  }
+}
+
+
+:root {
+  --active-color: #57b898;
+  --hover-color: rgba(87, 184, 152, .94);
+  --black-light: #434440;
+  --grey: #edebe6;
+  --bg-grey: #f9f9f9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+// 滚动条
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+// 没有滑块的轨道部分
+::-webkit-scrollbar-track-piece {
+  background: #f0f0f0;
+}
+
+// 滑块
+::-webkit-scrollbar-thumb {
+  background: rgba(144, 147, 153, 0.3);
+  border-radius: 4px;
+}
+
+// 滑块两端的按钮
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+.object-cover {
+  object-fit: cover;
+}
+
+// pc 与 mobile 分别显示
+.show-pc {
+  display: block;
+}
+
+.show-mobile {
+  display: none;
+}
+
+.round-default-30 {
+  border-radius: 0.3rem;
+}
+
+@include mq(tablet) {
+  .show-pc {
+    display: none;
+  }
+
+  .show-mobile {
+    display: block;
+  }
+
+  .round-default-30 {
+    border-radius: 0.16rem;
+  }
+}
+
+button {
+  outline: none;
+  position: relative;
+  user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  text-align: center;
+  white-space: nowrap;
+  text-align: center;
+  cursor: pointer;
+  font-family: OPPOSans-R;
+}
+
+.button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 0.67rem;
+  padding: 0 0.34rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0.16rem;
+  transition: all 0.4s ease;
+
+  &.dark {
+    border-color: RGBA(178, 181, 184, 0.3);
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .text {
+    margin-right: 1rem;
+    opacity: 0.7;
+    line-height: 1;
+  }
+
+  .img {
+    font-size: 18px;
+    transition: all 0.5s;
+
+    @include mq(desktop-wide) {
+      font-size: 14px;
+    }
+  }
+
+  &:hover {
+    // background-color: var(--active-color);
+    background-color: var(--hover-color);
+
+    .text {
+      opacity: 1;
+    }
+
+    .img {
+      color: #fff;
+      transform: rotate(-45deg) scale(1.3);
+      transition: .5s;
+    }
+  }
+
+  &.more:hover {
+    .img {
+      color: #fff;
+    }
+  }
+
+  &.play {
+    border-width: 2px;
+
+    .img {
+      width: 12px;
+      width: 12px;
+      background-image: url(/img/common/play.png);
+    }
+
+    &:hover {
+      border: 2px solid transparent;
+
+      .img {
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  &.more {
+    .img {
+      color: rgba(76, 89, 108, .7);
+    }
+  }
+
+  @include mq(tablet) {
+    height: 0.85rem;
+    padding: 0 0.3rem 0 0.45rem;
+
+    .text {
+      opacity: 1;
+      font-size: 0.24rem;
+    }
+
+    &.more {
+      padding: 0 0.3rem 0 0.33rem;
+    }
+  }
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  width: 0.55rem;
+  height: 0.55rem;
+  background-color: #f5f6f7;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color .5s;
+
+  .iconfont.icon-youjiantou {
+    transform: translateY(45deg) scale(1.2);
+    transition: .5s;
+  }
+
+  img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+  }
+
+  @include mq(tablet) {
+    width: 0.65rem;
+    height: 0.65rem;
+
+    img {
+      width: 0.18rem;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+}
+
+// 滑动元素动画
+.slideTop {
+  opacity: 0;
+  transform: translate(0, 100px);
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-property: all;
+  transition-delay: 0.5s;
+}
+
+.motionActive {
+  opacity: 1;
+  transform: translate(0, 0);
+}

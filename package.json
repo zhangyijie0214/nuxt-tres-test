@@ -1,0 +1,47 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --host",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@nuxtjs/device": "^3.1.1",
+    "@nuxtjs/i18n": "^8.0.0-rc.5",
+    "@nuxtjs/style-resources": "^2.0.0",
+    "@nuxtjs/tailwindcss": "^6.10.1",
+    "@types/three": "^0.158.3",
+    "@vueuse/nuxt": "^10.6.1",
+    "nuxt": "^3.8.2",
+    "postcss": "^8.4.31",
+    "sass": "^1.69.5",
+    "sass-loader": "^13.3.2",
+    "vue": "^3.3.8",
+    "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.5.1",
+    "@tresjs/cientos": "^3.6.0",
+    "@tresjs/core": "^3.5.1",
+    "@tresjs/nuxt": "^1.2.2",
+    "@videojs-player/vue": "^1.0.0",
+    "@vueuse/core": "^10.6.1",
+    "animejs": "^3.2.1",
+    "cgl": "^2.0.38",
+    "element-plus": "^2.4.2",
+    "gsap": "^3.12.2",
+    "jquery": "^3.7.1",
+    "scrollmagic": "^2.0.8",
+    "swiper": "^11.0.5",
+    "three": "^0.158.0",
+    "tweakpane": "^4.0.1",
+    "video.js": "^8.6.1",
+    "vue-animate-onscroll": "^1.0.8",
+    "vue-scrollto": "^2.20.0"
+  }
+}
