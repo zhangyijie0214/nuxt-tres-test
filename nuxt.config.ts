@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
     head: {
-      title: '长安绿电',
+      title: 'test',
       htmlAttrs: {
         lang: 'zh'
       },
